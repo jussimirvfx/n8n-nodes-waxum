@@ -34,6 +34,12 @@ npm pack
 
 The generated catalog uses the English console playground from [Waxum 0.16.1](https://github.com/imtaqin/waxum/tree/851bedf3189bda742433ef57bc06e75be590860b). To regenerate it from a compatible checkout, run `node scripts/sync-catalog.cjs /path/to/src/console/assets/playground.js` and rerun the tests.
 
+## Contributors
+
+- [@Brunozhz](https://github.com/Brunozhz) developed the Waxum integration for n8n.
+
+Report bugs or suggest improvements in [GitHub Issues](https://github.com/jussimirvfx/n8n-nodes-waxum/issues), or open a [pull request](https://github.com/jussimirvfx/n8n-nodes-waxum/pulls) to propose a change.
+
 ## Publishing for self-hosted n8n
 
 1. Push the reviewed source to the public repository named in `package.json`.
