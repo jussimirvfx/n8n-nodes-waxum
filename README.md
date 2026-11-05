@@ -20,7 +20,7 @@ Use a token scoped to the sessions and operations that the workflow needs. Selec
 
 - **Check a session.** Import [session-status.json](examples/session-status.json), select your Waxum credential, and replace `my-session` with your session ID. For WhatsApp Cloud API, choose its **Session status** operation in the node picker. This workflow reads the session status.
 - **Send a text message.** Select **Send Text** under **WhatsApp Web → Validated Actions**. Set the session, recipient with country code, and message. Enable **Validate Only** to check the session and recipient before sending.
-- **Process a received voice message.** Pass the received media metadata to **Download Received Media**. The node returns the audio in the `data` binary field by default. Connect a separate transcription node that reads that field if your workflow needs a transcript.
+- **Process a received voice message.** If the workflow starts with a webhook, filter for incoming messages with audio before passing the media metadata to **Download Received Media**. A recording indicator is a presence event and carries no audio. The node returns the audio in the `data` binary field by default. Connect a separate transcription node that reads that field if your workflow needs a transcript.
 
 Other resources cover media, interactive messages, contacts, groups, webhooks, scheduling, bulk operations, and administration. Availability depends on the channel, the Waxum server version, and token permissions. Acceptance by the API is separate from delivery and read receipts. Check the conversation history before retrying an operation with an uncertain result.
 
