@@ -1,0 +1,57 @@
+{
+  "name": "n8n-nodes-waxum",
+  "version": "0.9.1",
+  "author": {
+    "name": "jussimirvfx",
+    "url": "https://github.com/jussimirvfx",
+    "email": "200262455+jussimirvfx@users.noreply.github.com"
+  },
+  "description": "Community node for Waxum WhatsApp automation in n8n",
+  "license": "MIT",
+  "keywords": [
+    "n8n-community-node-package",
+    "waxum"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "examples",
+    "LICENSE-WAXUM"
+  ],
+  "scripts": {
+    "build": "tsc && node scripts/copy-assets.cjs",
+    "test": "npm run build && node --test test/*.test.cjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "n8n-workflow": "2.16.0",
+    "typescript": "^5.9.0"
+  },
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "credentials": [
+      "dist/credentials/WaxumApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Waxum/Waxum.node.js"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jussimirvfx/n8n-nodes-waxum.git"
+  },
+  "homepage": "https://github.com/jussimirvfx/n8n-nodes-waxum#readme",
+  "bugs": {
+    "url": "https://github.com/jussimirvfx/n8n-nodes-waxum/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  }
+}

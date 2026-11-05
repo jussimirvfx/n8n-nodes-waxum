@@ -1,0 +1,36 @@
+{
+  "name": "Waxum session status",
+  "nodes": [
+    {
+      "id": "5b5337d6-c2dd-4fb9-9474-f0e5cd8feb46",
+      "name": "When clicking Execute Workflow",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [0, 0],
+      "parameters": {}
+    },
+    {
+      "id": "f9030c17-af1c-46e8-922c-b0416eb14343",
+      "name": "Get Waxum session status",
+      "type": "n8n-nodes-waxum.waxum",
+      "typeVersion": 6,
+      "position": [260, 0],
+      "parameters": {
+        "resource": "web:info",
+        "operation": "info/status",
+        "sessionId": {
+          "__rl": true,
+          "mode": "id",
+          "value": "my-session"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "When clicking Execute Workflow": {
+      "main": [[{"node": "Get Waxum session status", "type": "main", "index": 0}]]
+    }
+  },
+  "active": false,
+  "settings": {"executionOrder": "v1"}
+}
