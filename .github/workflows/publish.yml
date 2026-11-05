@@ -1,0 +1,36 @@
+name: Stage npm release
+
+on:
+  workflow_dispatch:
+    inputs:
+      first_release:
+        description: First release using the temporary npm staging token
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          registry-url: 'https://registry.npmjs.org'
+          package-manager-cache: false
+      - run: npm ci --ignore-scripts
+      - run: npm test
+      - name: Stage the first release
+        if: inputs.first_release
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_BOOTSTRAP_TOKEN }}
+        run: npm exec --yes --package=npm@11.21.2 -- npm stage publish . --access public --provenance
+      - name: Stage a release via OIDC
+        if: "!inputs.first_release"
+        run: npm exec --yes --package=npm@11.21.2 -- npm stage publish . --access public --provenance
