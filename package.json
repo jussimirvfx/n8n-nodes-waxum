@@ -1,16 +1,19 @@
 {
   "name": "n8n-nodes-waxum",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "author": {
     "name": "jussimirvfx",
     "url": "https://github.com/jussimirvfx",
     "email": "200262455+jussimirvfx@users.noreply.github.com"
   },
-  "description": "Community node for Waxum WhatsApp automation in n8n",
+  "description": "Automate WhatsApp Web and WhatsApp Cloud API in n8n with Waxum. Send interactive buttons and media, manage sessions, and handle webhooks.",
   "license": "MIT",
   "keywords": [
     "n8n-community-node-package",
-    "waxum"
+    "waxum",
+    "whatsapp",
+    "whatsapp-cloud-api",
+    "automation"
   ],
   "files": [
     "dist",
