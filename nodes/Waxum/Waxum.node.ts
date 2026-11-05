@@ -12,6 +12,7 @@ export class Waxum extends VersionedNodeType {
     const description: INodeTypeBaseDescription = {
       displayName: 'Waxum', name: 'waxum', icon: 'file:waxum.svg', group: ['output'],
       description: 'Work with WhatsApp messages, media, contacts, and sessions in Waxum',
+      codex: { resources: { primaryDocumentation: [{ url: 'https://waxum.imtaqin.id/docs/category/api-reference/' }] } },
       defaultVersion: 6, usableAsTool: true,
     };
     super({
